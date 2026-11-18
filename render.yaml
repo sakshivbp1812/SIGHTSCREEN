@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sightscreen
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY        # free LLM key from console.groq.com (recommended)
+        sync: false
+      - key: GEMINI_API_KEY      # or a free key from aistudio.google.com
+        sync: false
+      - key: ANTHROPIC_API_KEY   # optional alternative
+        sync: false
+      - key: ADMIN_TOKEN         # protects Operations, AI traces and evaluation pages; set a long random value
+        sync: false
+      - key: OPENAI_API_KEY      # optional alternative
+        sync: false
